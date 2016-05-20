@@ -14,6 +14,11 @@ describe('ContactController', function () {
       $scope.vm.search = "female"
       $scope.vm.changeFilter()
       expect($scope.vm.filteredList.length).toEqual(71)
+    })
+
+    it('should filter by location', function(){
+      var $scope = {}
+      $controller('ContactController as vm', {$scope: $scope})
 
       $scope.vm.search="Manchester"
       $scope.vm.changeFilter()
