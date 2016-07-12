@@ -15,17 +15,17 @@ describe('ContactController', function () {
 
       $scope.vm.changeFilter();
 
-      expect($scope.vm.filteredList.count()).toEqual(71);
+      expect($scope.vm.filteredList.length).toEqual(71);
     });
 
     it('should filter by location', function () {
       var $scope = {};
       $controller('ContactController as vm', {$scope: $scope});
 
-      $scope.vm.search = 'Manchester';
+      $scope.vm.search = 'manchester';
 
       $scope.vm.changeFilter();
 
-      expect($scope.vm.filteredList.count()).toEqual(8);
+      expect($scope.vm.filteredList.length).toEqual(8);
     });
 });
