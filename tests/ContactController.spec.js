@@ -9,7 +9,7 @@ describe('ContactController', function () {
 
     var $scope={};
 
-    it('should return all females', function () {
+    it('should filter by gender', function () {
       
       $controller('ContactController as vm', {$scope: $scope});
       $scope.vm.search = 'female';
@@ -19,7 +19,7 @@ describe('ContactController', function () {
       });
     });
 
-    it('should count people from Manchester', function () {
+    it('should filter by location', function () {
       $controller('ContactController as vm', {$scope: $scope});
       $scope.vm.search = 'manchester';
       $scope.vm.changeFilter();
