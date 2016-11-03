@@ -7,4 +7,23 @@ describe('ContactController', function () {
         $controller = _$controller_;
     }));
 
+    it('should filter the results correctly', function() {
+      var $scope = {};
+      $controller('ContactController as vm', {$scope: $scope});
+
+      expect($scope.vm.filteredList.length).toEqual(71);
+    });
+
+    it('should re-filter the results correctly when changing the search term',
+      function() {
+        var $scope = {};
+        $controller('ContactController as vm', {$scope: $scope});
+
+        $scope.vm.search = "manchester"
+
+        $scope.vm.changeFilter();
+
+        expect($scope.vm.filteredList.length).toEqual(8);
+      });
+
 });
