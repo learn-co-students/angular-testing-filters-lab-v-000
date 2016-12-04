@@ -3134,8 +3134,11 @@ function ContactController($filter) {
     this.changeFilter = function () {
         this.filteredList = $filter('filter')(this.list, this.search);
     };
-}
 
+
+   
+
+}
 angular
     .module('app')
     .controller('ContactController', ContactController);
