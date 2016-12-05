@@ -1,10 +1,29 @@
 describe('ContactController', function () {
-    var $controller;
+  var $controller;
 
-    beforeEach(module('app'));
+  beforeEach(module('app'));
 
-    beforeEach(inject(function (_$controller_) {
-        $controller = _$controller_;
-    }));
+  beforeEach(inject(function (_$controller_) {
+      $controller = _$controller_;
+  }));
 
+  it('should filter results by gender', function () {
+    var $scope = {};
+    $controller('ContactController as vm', {$scope: $scope});
+
+    $scope.vm.search = 'female';
+    $scope.vm.changeFilter();
+
+    expect($scope.vm.filteredList.length).toEqual(71);
+  });
+
+  it('should filter results by location', function () {
+    var $scope = {};
+    $controller('ContactController as vm', {$scope: $scope});
+
+    $scope.vm.search = 'manchester';
+    $scope.vm.changeFilter();
+
+    expect($scope.vm.filteredList.length).toEqual(8);
+  });
 });
