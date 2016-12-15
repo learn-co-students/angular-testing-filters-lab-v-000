@@ -7,7 +7,7 @@ describe('ContactController', function () {
         $controller = _$controller_;
     }));
 
-    it('should return the number of females on the list', function() {
+    it('should filter by gender', function() {
       var $scope = {};
       $controller('ContactController as vm', {$scope: $scope});
 
@@ -15,10 +15,10 @@ describe('ContactController', function () {
 
       $scope.vm.changeFilter();
 
-      expect($scope.vm.filteredList.length).toEqual(71);
+      expect($scope.vm.filteredList.length).toBe(71);
     });
 
-    it('should return the number of contacts on the list with manchester as their city', function() {
+    it('should filter by location', function() {
       var $scope = {};
       $controller('ContactController as vm', {$scope: $scope});
 
@@ -26,7 +26,8 @@ describe('ContactController', function () {
 
       $scope.vm.changeFilter();
 
-      expect($scope.vm.filteredList.length).toEqual(8);
+      expect($scope.vm.filteredList.length).toBe(8);
+      // `toBe` v `toEqual`: http://stackoverflow.com/a/27929503/1454968
     });
 
 });
