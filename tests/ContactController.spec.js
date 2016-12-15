@@ -7,4 +7,27 @@ describe('ContactController', function () {
         $controller = _$controller_;
     }));
 
+    it('should filter by gender', function() {
+      var $scope = {};
+      $controller('ContactController as vm', {$scope: $scope});
+
+      $scope.vm.search = 'female';
+
+      $scope.vm.changeFilter();
+
+      expect($scope.vm.filteredList.length).toBe(71);
+    });
+
+    it('should filter by location', function() {
+      var $scope = {};
+      $controller('ContactController as vm', {$scope: $scope});
+
+      $scope.vm.search = 'manchester';
+
+      $scope.vm.changeFilter();
+
+      expect($scope.vm.filteredList.length).toBe(8);
+      // `toBe` v `toEqual`: http://stackoverflow.com/a/27929503/1454968
+    });
+
 });
