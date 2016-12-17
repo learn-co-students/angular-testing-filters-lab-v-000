@@ -1,4 +1,11 @@
 function ContactController($filter) {
+    this.search;
+
+    this.filteredList = $filter('filter')(this.list, this.search);
+
+    this.changeFilter = function () {
+        this.filteredList = $filter('filter')(this.list, this.search);
+    };
     this.list = [
         {
             "gender": "male",
