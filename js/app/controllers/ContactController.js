@@ -1,4 +1,5 @@
 function ContactController($filter) {
+
     this.list = [
         {
             "gender": "male",
@@ -3127,12 +3128,12 @@ function ContactController($filter) {
         }
     ];
 
-    this.search = 'B';
+    // this.search = 'female';
 
-    this.filteredList = $filter('filter')(this.list, this.search);
+    // this.filteredList = $filter('filter')(this.list, this.search);
 
-    this.changeFilter = function () {
-        this.filteredList = $filter('filter')(this.list, this.search);
+    this.changeFilter = function (search) {
+        return this.filteredList = $filter('filter')(this.list, search);
     };
 }
 
