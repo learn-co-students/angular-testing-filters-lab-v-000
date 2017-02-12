@@ -16,7 +16,7 @@ module.exports = function (config) {
         ],
         preprocessors: {},
         reporters: ['spec'],
-        port: 9876,
+        port: 4444,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
@@ -25,3 +25,4 @@ module.exports = function (config) {
         concurrency: Infinity
     })
 }
+//9876
